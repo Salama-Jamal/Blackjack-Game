@@ -15,7 +15,7 @@
 let hasDiscountCode = true;
 
 function processOrder() {
-    if ("") {
+    if (hasDiscountCode) {
         console.log(" Discount applied to order food ")
         hasDiscountCode = false;
     } else {

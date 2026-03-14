@@ -16,13 +16,15 @@ function startGame() {
         message = "You're out of the game!😭"
         isAlive = false;
     }
+    document.getElementById("cars-number").textContent += `${firstCard} , ${secondCard}`
+    document.getElementById("result-btn").textContent += sum
+
 
 }
-startGame()
+
 
 console.log(message)
-console.log(hasBlackjack)
-console.log(isAlive)
+
 
 
 

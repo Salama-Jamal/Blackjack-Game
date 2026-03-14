@@ -29,7 +29,8 @@ button {
     color: #016f32;
     border-radius: 5px;
     font-size: large;
-
+    border: none;
+    margin-bottom: 10px;
 }
 
 

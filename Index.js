@@ -1,4 +1,4 @@
-let firstCard = 10;
+let firstCard = 6;
 let secondCard = 11;
 let sum = firstCard + secondCard;
 let hasBlackjack = false
@@ -8,22 +8,27 @@ let message = ""
 
 function startGame() {
     if (sum <= 20) {
-        message = "Do you want to draw a new Card! 🙂";
+        message = "Do you want to draw a new Card! ";
     } else if (sum === 21) {
-        message = "Wohoo! You've got blackjack! 🥳"
+        message = "You've got blackjack! "
         hasBlackjack = true
     } else {
-        message = "You're out of the game!😭"
+        message = "You're out of the game!"
         isAlive = false;
     }
-    document.getElementById("cars-number").textContent += `${firstCard} , ${secondCard}`
-    document.getElementById("result-btn").textContent += sum
+    document.getElementById("cars-number").textContent = ` Cards: ${firstCard}  ${secondCard}`
+    document.getElementById("result-btn").textContent = `Sum: ${sum}`
+    document.querySelector("#ask-to-paly").textContent = message
 
 
 }
 
 
-console.log(message)
+function newCard() {
+    let card = 7;
+    sum += sum
+    startGame()
+}
 
 
 

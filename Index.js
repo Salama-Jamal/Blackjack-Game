@@ -3,9 +3,7 @@ let sum = 0
 let hasBlackjack = false
 let isAlive = false
 let message = ""
-let messageEl = document.getElementById("message-el")
-let sumEl = document.getElementById("sum-el")
-let cardsEl = document.getElementById("cards-el")
+
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
@@ -19,11 +17,11 @@ function getRandomCard() {
 
 }
 function randomCard() {
-    cardsEl.textContent = " Cards: "
+    document.getElementById("cards-el").textContent = " Cards: "
     for (let i = 0; i < cads.length; i++) {
-        cardsEl.textContent = cads[i]
+        document.getElementById("cards-el").textContent = cads[i]
     }
-    sumEl.textContent = "Sum: "
+    document.getElementById("sum-el").textContent = "Sum: "
     if (sum <= 20) {
         message = "do you want to draw a new card?"
     } else if (sum === 21) {
@@ -32,7 +30,7 @@ function randomCard() {
         message = "You are out of the game"
         isAlive = false
     }
-    messageEl.textContent = message
+    document.getElementById("message-el").textContent = message
 
 }
 function startGame() {

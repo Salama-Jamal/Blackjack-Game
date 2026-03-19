@@ -1,56 +1,72 @@
-let firstCard = 6;
-let secondCard = 11;
-let sum = firstCard + secondCard;
+let cads = []
+let sum = 0
 let hasBlackjack = false
-let isAlive = true
+let isAlive = false
 let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
 
-
-function startGame() {
-    if (sum <= 20) {
-        message = "Do you want to draw a new Card! ";
-    } else if (sum === 21) {
-        message = "You've got blackjack! "
-        hasBlackjack = true
+function getRandomCard() {
+    let randomNumber = Math.floor(Math.random() * 13) + 1
+    if (randomNumber > 10) {
+        return 10
+    } else if (randomNumber === 1) {
+        return 11
     } else {
-        message = "You're out of the game!"
-        isAlive = false;
+        return randomNumber
     }
-    document.getElementById("cars-number").textContent = ` Cards: ${firstCard}  ${secondCard}`
-    document.getElementById("result-btn").textContent = `Sum: ${sum}`
-    document.querySelector("#ask-to-paly").textContent = message
 
+}
+function randomCard() {
+    cardsEl.textContent = " Cards: "
+    for (let i = 0; i < cads.length; i++) {
+        cardsEl.textContent = cads[i]
+    }
+    sumEl.textContent = "Sum: "
+    if (sum <= 20) {
+        message = "do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+    } else {
+        message = "You are out of the game"
+        isAlive = false
+    }
+    messageEl.textContent = message
+
+}
+function startGame() {
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [
+        firstCard,
+        secondCard
+    ]
+    sum = firstCard + secondCard
+
+    renderGame()
 
 }
 
 
 function newCard() {
-    let card = 7;
-    sum += sum
+    let card = getRandomCard()
+    sum += card
+    cards.push(card)
     startGame()
 }
 
 
 
 
-// let hasDiscountCode = true;
-
-// function processOrder() {
-//     if (hasDiscountCode) {
-//         console.log(" Discount applied to order food ")
-//         hasDiscountCode = false;
-//     } else {
-//         console.log("Discount not applied!")
-//     }
-// }
-// processOrder()
-// processOrder()
 
 
-// console.log(4 === 3)  // false 
-// console.log(5 > 2)    // true
-// console.log(12 > 12)  // false 
-// console.log(3 < 0)    // false
-// console.log(3 >= 3)   //  true
-// console.log(11 <= 11) // true
-// console.log(3 <= 2)   //false
+
+
+
+
+
+
+
+

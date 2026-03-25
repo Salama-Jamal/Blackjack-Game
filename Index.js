@@ -1,9 +1,13 @@
-let cads = []
+let cards = []
 let sum = 0
-let hasBlackjack = false
+let hasBlackJack = false
 let isAlive = false
 let message = ""
 
+
+
+
+console.log(cards)
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
@@ -14,37 +18,36 @@ function getRandomCard() {
     } else {
         return randomNumber
     }
-
 }
-function randomCard() {
-    document.getElementById("cards-el").textContent = " Cards: "
-    for (let i = 0; i < cads.length; i++) {
-        document.getElementById("cards-el").textContent = cads[i]
-    }
-    document.getElementById("sum-el").textContent = "Sum: "
-    if (sum <= 20) {
-        message = "do you want to draw a new card?"
-    } else if (sum === 21) {
-        message = "You've got Blackjack!"
-    } else {
-        message = "You are out of the game"
-        isAlive = false
-    }
-    document.getElementById("message-el").textContent = message
 
-}
 function startGame() {
     isAlive = true
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
-    cards = [
-        firstCard,
-        secondCard
-    ]
+    cards = [firstCard, secondCard]
     sum = firstCard + secondCard
-
+    // Generate two random numbes
+    // Re-assign the cards and sum variables so that the game can start
     renderGame()
+}
 
+function renderGame() {
+    document.getElementById("cards-el").textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        document.getElementById("cards-el").textContent += cards[i] + " "
+    }
+
+    document.getElementById("message-el").textContent = "Sum: " + sum
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    document.getElementById("message-el").textContent = message
 }
 
 
@@ -52,19 +55,6 @@ function newCard() {
     let card = getRandomCard()
     sum += card
     cards.push(card)
-    startGame()
+    renderGame()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

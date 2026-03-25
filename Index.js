@@ -19,6 +19,7 @@ function getRandomCard() {
         return randomNumber
     }
 }
+console.log(getRandomCard())
 
 function startGame() {
     isAlive = true
@@ -30,6 +31,7 @@ function startGame() {
     // Re-assign the cards and sum variables so that the game can start
     renderGame()
 }
+console.log(startGame())
 
 function renderGame() {
     document.getElementById("cards-el").textContent = "Cards: "
@@ -37,7 +39,7 @@ function renderGame() {
         document.getElementById("cards-el").textContent += cards[i] + " "
     }
 
-    document.getElementById("message-el").textContent = "Sum: " + sum
+    document.getElementById("sum-el").textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
@@ -49,6 +51,7 @@ function renderGame() {
     }
     document.getElementById("message-el").textContent = message
 }
+console.log(renderGame())
 
 
 function newCard() {
@@ -57,4 +60,4 @@ function newCard() {
     cards.push(card)
     renderGame()
 }
-
+console.log(newCard())

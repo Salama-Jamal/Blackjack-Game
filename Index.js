@@ -26,7 +26,7 @@ function startGame() {
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
-    // Generate two random numbes
+    // Generate two random numbers between 1 and 11 and store them in variables firstCard and secondCard
     // Re-assign the cards and sum variables so that the game can start
     renderGame()
 }

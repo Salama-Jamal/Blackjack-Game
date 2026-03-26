@@ -7,7 +7,7 @@ let message = ""
 
 
 
-console.log(cards)
+
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
@@ -19,7 +19,7 @@ function getRandomCard() {
         return randomNumber
     }
 }
-console.log(getRandomCard())
+
 
 function startGame() {
     isAlive = true
@@ -31,7 +31,7 @@ function startGame() {
     // Re-assign the cards and sum variables so that the game can start
     renderGame()
 }
-console.log(startGame())
+
 
 function renderGame() {
     document.getElementById("cards-el").textContent = "Cards: "
@@ -51,7 +51,7 @@ function renderGame() {
     }
     document.getElementById("message-el").textContent = message
 }
-console.log(renderGame())
+
 
 
 function newCard() {
@@ -60,4 +60,17 @@ function newCard() {
     cards.push(card)
     renderGame()
 }
-console.log(newCard())
+
+
+
+
+function newGame() {
+    cards = []
+    sum = 0
+    hasBlackJack = false
+    isAlive = false
+    message = ""
+    document.getElementById("cards-el").textContent = "Cards: "
+    document.getElementById("sum-el").textContent = "Sum: "
+    document.getElementById("message-el").textContent = ""
+}

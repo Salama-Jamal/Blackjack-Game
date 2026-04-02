@@ -80,15 +80,13 @@
 
 
 
-let hasSolveChallenge = false;
-let hasHintLeft = false;
+let age = 99
+if (age < 100) {
+    console.log("You'are not eligible")
+} else if (age === 100) {
+    console.log("Here is your birthday car from the king!"
 
-if (hasSolveChallenge === false && hasHintLeft === false) {
-    showSolution()
-
-}
-
-
-function showSolution() {
-    console.log("Showing Solution...")
+    )
+} else {
+    console.log(" You'are not eligible, you have already gotten one!")
 }

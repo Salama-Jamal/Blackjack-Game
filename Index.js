@@ -1,5 +1,5 @@
 let player = {
-    name: "Jamal",
+    name: prompt("Please enter your name:"),
     chips: 399
 }
 let cards = []
@@ -8,7 +8,7 @@ let hasBlackJack = false
 let isAlive = false
 let message = ""
 
-document.getElementById("player-el").textContent = player.name + ": $" + player.chips
+document.getElementById("player-el").textContent += player.name + ": $" + player.chips
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1
     if (randomNumber > 10) {
